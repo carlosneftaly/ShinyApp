@@ -11,7 +11,7 @@ dat2 <- read.csv("Data/2017-09-03 Datos_thevetia .csv",sep=';')
 
 shinyUI(
   
-  navbarPage(
+  navbarPage(theme = shinytheme("yeti"),
     img(src='AO.png', align = "left"),
     tabPanel('Seleccione los datos',
              tags$style(type = "text/css", ".navbar-brand {padding-top: 0px!important; padding-left: 0px!important;}"),
@@ -50,7 +50,14 @@ shinyUI(
                    sidebarPanel(
                     htmlOutput('test_results_table'),
                      htmlOutput('normality_icon'),
-                     hr()
+                     hr(),
+                    uiOutput('transformation_selector'),
+                    uiOutput('denominator_selector'),
+                    uiOutput('trans_test_results_table'),
+                    htmlOutput('trans_normality_icon'),
+                    uiOutput('trans_warning'),
+                    
+                    hr()
                      
                      
                    ), 
